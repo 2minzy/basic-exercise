@@ -1,3 +1,7 @@
+html, body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 body {
     margin: 0;
 }
@@ -15,31 +19,20 @@ a:hover {
     color: #333;
 }
 
-.container1 {
-    margin-top: 20px;
-    margin-right: 70px;
-    margin-bottom: 200px;
-    margin-left: 70px;
-}
-
-.container2 {
-    margin-top: 30px;
-    margin-right: 70px;
-    margin-bottom: 20px;
-    margin-left: 70px;
+.container {
+    padding: 20px;
+    margin-right: 60px;
+    margin-left: 60px;
 }
 
 h1 {
-    font-family: Helvetica;
-    font-weight: 530;
+    font-weight: normal; /*same as 400*/
     margin-top: 0;
     padding-top: 75px;
     padding-left: 80px;
 }
 
 h2 {
-    font-family: Helvetica;
-    font-weight: bold;
     color:rgb(70, 70, 73); 
 }
 
@@ -61,24 +54,33 @@ h2 {
 .navbar {
     background-color: rgb(112, 110, 114);
     color: #fff;
-    height: 40px;
+    margin-bottom: 20px;
 }
 
 .navbar ul {
     list-style: none;
     margin: 0;
-    padding-top: 8px;
+    margin-left: 70px;
+    margin-right: 70px;
+    padding: 0;
 }
 
 
-.navbar li{
-    font-family: Helvetica;
-    font-weight: 530;
-    padding-left: 40px;
-    display: inline;
+.navbar ul li {
+    padding: 10px;
+    display: block;
+    text-align: center;
 }   
 
-.navbar a{
+@media(min-width: 768px) {
+    .navbar ul li {
+        /* padding: 10px; 생략가능*/  
+        display: inline-block;
+        text-align: left;
+    }
+}
+
+.navbar ul li a{
     color: #fff;
     text-decoration: none;  
     font-size: 18px;
@@ -86,17 +88,41 @@ h2 {
 }
 
 .blog-image {
-    width: 300px;
-    height: 300px;
-    float: left;
-    margin-right: 50px;
+    width: 100%;
+    height: auto;
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin-bottom: 20px;
 }
+
+@media(min-width: 768px) {
+    .blog-image {
+        width: 300px;
+        height: 300px;
+        float: left;
+        margin-right: 30px; 
+        margin-bottom: 0;
+    }
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+  /* Same as above
+.clearfix {
+ overflow: auto;
+}
+*/
 
 .main-footer {
     background: #333;
     color: #fff;
     text-align: center;
     padding: 5px;
-    margin-top: 200px;
  }
 
